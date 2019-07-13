@@ -3,3 +3,18 @@ apollo:
     enabled: true
     # will inject 'application' and 'TEST1.apollo' namespaces in bootstrap phase
     namespaces: application,TEST1.apollo,application.yaml
+
+redis:
+  cache:
+    clusterNodes: 12
+    commandTimeout: 50
+    enabled: true
+    expireSeconds: 100
+    # someList: [c,d] 行内写法
+    someList:
+      - c
+      - d
+    # someMap: {key1: a,key2: b} 行内写法
+    someMap:
+      key1: a
+      key2: b

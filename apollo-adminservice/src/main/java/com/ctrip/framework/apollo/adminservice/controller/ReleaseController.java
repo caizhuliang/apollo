@@ -122,6 +122,7 @@ public class ReleaseController {
     } else {
       messageCluster = clusterName;
     }
+    // 这个消息发送完以后，SimpleApolloConfigDemo的监听器就会发现
     messageSender.sendMessage(ReleaseMessageKeyGenerator.generate(appId, messageCluster, namespaceName),
                               Topics.APOLLO_RELEASE_TOPIC);
     return BeanUtils.transform(ReleaseDTO.class, release);
